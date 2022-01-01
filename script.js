@@ -13,15 +13,9 @@ const getAbsoluteDistance = (a,b) => {
 
 const compareGuesses = (humanGuess, computerGuess, secretTargetNumber) => {
   if (humanGuess >= 0 && humanGuess <= 9) {
-    let humanResult = getAbsoluteDistance(humanGuess - secretTargetNumber);
-    let computerResult = getAbsoluteDistance(computerGuess - secretTargetNumber);
-    if (humanResult > computerResult) {
-      return false;
-    } else if (humanResult < computerResult) {
-      return true;
-    } else if (humanResult === computerResult) {
-      return true;
-    }
+    const humanResult = getAbsoluteDistance(humanGuess - secretTargetNumber);
+    const computerResult = getAbsoluteDistance(computerGuess - secretTargetNumber);
+    return humanResult <= computerResult;
   } else {
     console.log(alert('Wrong!'));
   }
